@@ -35,7 +35,7 @@ class DistanceNode(Node):
         # If distance < 1.0 → stop both turtles
         self.min_allowed_distance = 1.0
 
-        # CHANGED/ADDED FOR SERVICE:
+        # CHANGED/ADDED:
         # Service that allows user to change the threshold at runtime
         # Receives: operation ("increase" / "decrease") + float value
         # Replies: ok (bool)
@@ -46,7 +46,7 @@ class DistanceNode(Node):
         # CHANGED/ADDED FOR SERVICE: show service availability
         print("Service available: /set_distance_threshold (increase/decrease + float)\n")
 
-    # CHANGED/ADDED FOR SERVICE:
+    # CHANGED/ADDED:
     # Service callback to update the distance threshold between turtles
     def set_distance_threshold_cb(self, request, response):
         op = request.operation.strip().lower()
@@ -103,7 +103,7 @@ class DistanceNode(Node):
         print(f"Distance between turtles: {distance:.3f} meters")
 
         # If turtles are too close → STOP both!
-        # CHANGED/ADDED FOR SERVICE: uses the updated threshold self.min_allowed_distance (same variable as before)
+        # CHANGED/ADDED: uses the updated threshold self.min_allowed_distance (same variable as before)
         if distance < self.min_allowed_distance:
             print("TOO CLOSE! Stopping both turtles!")
             self.stop_both_turtles()
