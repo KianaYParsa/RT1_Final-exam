@@ -1,16 +1,24 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>assignment1_rt_interfaces</name>
+  <name>assignment1_rt</name>
   <version>0.0.0</version>
-  <description>Custom interfaces (services) for assignment1_rt.</description>
+  <description>Assignment 1 - Research Track I (turtlesim UI + distance/safety node).</description>
 
   <maintainer email="user@todo.todo">user</maintainer>
   <license>Apache-2.0</license>
 
-  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_python</buildtool_depend>
 
-  <build_depend>rosidl_default_generators</build_depend>
-  <exec_depend>rosidl_default_runtime</exec_depend>
+  <depend>rclpy</depend>
 
-  <member_of_group>rosidl_interface_packages</member_of_group>
+  <depend>geometry_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>turtlesim</depend>
+
+  <build_depend>assignment1_rt_interfaces</build_depend>
+  <exec_depend>assignment1_rt_interfaces</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
 </package>
